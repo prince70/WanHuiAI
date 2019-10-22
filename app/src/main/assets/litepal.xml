@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <!--名称-->
+    <dbname value="wanhui_ai" />
+    <!--版本号-->
+    <list> <!--这里是类映射，必填-->
+        <!--<mapping class="mo.com.db.Student"></mapping>-->
+        <mapping class="com.niwj.wanhuiai.entity.RGBMULTI7240Yellow"/>
+        <mapping class="com.niwj.wanhuiai.entity.RGBMULTI7240YellowTwo"/>
+        <mapping class="com.niwj.wanhuiai.entity.DetectReport"/>
+
+    </list>
+    <version value="1" /> <!-- 直接设置这个，就表示数据库存储的位置，直接打开手机存储就可以找到 -->
+    <!--这个貌似是路径，没测试过。-->
+<!--     <storage value="niweijin/database"/>-->
+</litepal>
+
+
