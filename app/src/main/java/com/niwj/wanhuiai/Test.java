@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by Administrator on 2019/10/7.
@@ -11,10 +12,10 @@ import java.util.List;
 public class Test {
 
     public static void main(String[] args) {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
+//        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
+        SimpleDateFormat format = new SimpleDateFormat("yy-M-d-H:m:s");
         String t=format.format(new Date());
         System.out.println(t);
-
         List<String> datas = new ArrayList<>();
         datas.add("倪");
         datas.add("伟");

@@ -25,6 +25,7 @@ import android.view.Surface;
 
 /**
  * Monitors the value returned from {@link Display#getRotation()}.
+ * 显示方向检测
  */
 public abstract class DisplayOrientationDetector {
 

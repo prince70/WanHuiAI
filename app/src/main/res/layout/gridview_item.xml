@@ -19,7 +19,6 @@
         android:layout_height="8dp" />
 
     <TextView
-        android:visibility="gone"
         android:id="@+id/tv_color"
         android:textSize="12sp"
         android:layout_width="wrap_content"

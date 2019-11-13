@@ -2,6 +2,7 @@ package com.niwj.wanhuiai;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,13 +15,6 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
 import com.niwj.wanhuiai.adapter.ImageAdapterfor7240YellowTwo;
 import com.niwj.wanhuiai.entity.ImageDetect7240YellowTwo;
 import com.niwj.wanhuiai.entity.ImagePiece;
@@ -28,10 +22,17 @@ import com.niwj.wanhuiai.entity.RGBMULTI7240YellowTwo;
 import com.niwj.wanhuiai.utils.CountDownHelper;
 import com.niwj.wanhuiai.utils.ImageSplitter;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by Administrator on 2019/9/24.
  */
-public class DetectActivityTwo extends AppCompatActivity {
+public class TestColorDetectActivity extends AppCompatActivity {
     private static final String TAG = "DetectActivity";
 
     private ImageView iv_show;
@@ -50,16 +51,19 @@ public class DetectActivityTwo extends AppCompatActivity {
         setContentView(R.layout.activity_detect);
         initView();
 
-        Intent intent = getIntent();
-        if (intent != null) {
-            Uri data = intent.getData();
-            try {
-                bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), data);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            iv_show.setImageURI(data);
-        }
+//        Intent intent = getIntent();
+//        if (intent != null) {
+//            Uri data = intent.getData();
+//            try {
+//                bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), data);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            iv_show.setImageURI(data);
+//        }
+
+        bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.suopan);
+        iv_show.setImageResource(R.mipmap.suopan);
         initData();
 
         /**
@@ -71,11 +75,11 @@ public class DetectActivityTwo extends AppCompatActivity {
     }
 
     private void EndOfCountDown() {
-        CountDownHelper helper = new CountDownHelper(tv_count, "0", 5, 1);
+        CountDownHelper helper = new CountDownHelper(tv_count, "0", 10, 1);
         helper.setOnFinishListener(new CountDownHelper.OnFinishListener() {
             @Override
             public void finish() {
-                DetectActivityTwo.this.finish();
+                TestColorDetectActivity.this.finish();
             }
         });
 

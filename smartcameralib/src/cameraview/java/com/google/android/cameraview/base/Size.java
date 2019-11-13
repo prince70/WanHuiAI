@@ -20,6 +20,7 @@ import androidx.annotation.NonNull;
 
 /**
  * Immutable class for describing width and height dimensions in pixels.
+ * 用于描述宽度和高度尺寸（以像素为单位）的不变类
  */
 public class Size implements Comparable<Size> {
 

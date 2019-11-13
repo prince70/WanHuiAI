@@ -124,16 +124,16 @@ public class MainActivity extends AppCompatActivity {
 //        储存文本到本地txt  路径必须存在
 //        FileUtils.writeTxtToFile(all.toString(),"/data/data/me.pqpo.smartcamera/","detectreport.txt");
 
-
+        List<RGBMULTI7240YellowTwo> all1 = LitePal.findAll(RGBMULTI7240YellowTwo.class);
+        for (RGBMULTI7240YellowTwo rgbmulti7240Yellow : all1) {
+            Log.e(TAG, "inquire:颜色 " + rgbmulti7240Yellow.toString());
+        }
         /**
          * 在这里记录每一次测试的模板的rgb值
          */
-//        List<RGBMULTI7240YellowTwo> all1 = LitePal.findAll(RGBMULTI7240YellowTwo.class);
-//        for (RGBMULTI7240YellowTwo rgbmulti7240Yellow : all1) {
-//            Log.e(TAG, "inquire:颜色 " + rgbmulti7240Yellow.toString());
-//        }
 
-        LitePal.deleteAll(RGBMULTI7240YellowTwo.class);
+
+//        LitePal.deleteAll(RGBMULTI7240YellowTwo.class);
 
     }
 
@@ -159,7 +159,12 @@ public class MainActivity extends AppCompatActivity {
         /*
          * 高斯模糊半径，用于消除噪点，必须为正奇数。
          */
-        SmartScanner.gaussianBlurRadius = 3;
+
+        /**
+         * 666666，消除噪点
+         */
+//        SmartScanner.gaussianBlurRadius = 3;
+        SmartScanner.gaussianBlurRadius = 15;
 
         // 检测范围比例, 比例越小表示待检测物体要更靠近边框
         SmartScanner.detectionRatio = 0.1f;
@@ -247,10 +252,11 @@ public class MainActivity extends AppCompatActivity {
 //        maskView.setScanSpeed(6);
         maskView.setScanSpeed(2);
 
-
+//        设置扫描梯度扩展
         maskView.setScanGradientSpread(80);
 
 //        maskView.setMaskSize(80,100);
+
 
         mCameraView.post(new Runnable() {
             @Override

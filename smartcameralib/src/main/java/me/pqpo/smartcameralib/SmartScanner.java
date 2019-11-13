@@ -31,7 +31,8 @@ public class SmartScanner {
     /**
      * 高斯模糊半径，用于消除噪点，必须为正奇数。
      */
-    public static int gaussianBlurRadius = 3;
+//    public static int gaussianBlurRadius = 3;
+    public static int gaussianBlurRadius = 15;
     /**
      * canny 算符阈值
      * 1. 低于阈值1的像素点会被认为不是边缘；
@@ -65,6 +66,9 @@ public class SmartScanner {
     /**
      * 检测角度阈值
      * 例如:
+     *
+     *
+     *
      *
      * 实际检测时会将夹角收敛到第一象限
      *
